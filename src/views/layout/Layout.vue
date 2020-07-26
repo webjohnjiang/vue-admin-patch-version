@@ -133,6 +133,7 @@ export default {
     }
   },
   mounted () {
+    console.log('layout mounted')
     const that = this
     that.collapsed = document.documentElement.clientWidth < 768
     window.onresize = function () {

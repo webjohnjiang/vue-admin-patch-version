@@ -73,7 +73,7 @@ export default {
           commit('setUserName', data.userName)
           commit('setUserId', data.userId)
           commit('setIsTab', data.isTab)
-          commit('setAccess', [])
+          commit('setAccess', []) // 理论上服务端要给返回可访问的菜单列表
           resolve(data)
         }).catch(err => {
           reject(err)

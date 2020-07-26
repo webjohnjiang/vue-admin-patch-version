@@ -1,3 +1,5 @@
+// 貌似是一些语言、算法工具函数
+
 export const forEach = (arr, fn) => {
   if (!arr.length || !fn) return
   let i = -1

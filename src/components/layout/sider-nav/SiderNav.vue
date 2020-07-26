@@ -1,12 +1,15 @@
 <template>
   <div class="sider-nav">
+    <!-- 下面整div里放的是左侧未折叠时的元素 -->
     <div class="sider-menu">
       <div class="sider-menu-top" v-show="!collapsed">
         <div class="sider-user-box">
           <Avatar :src="userAvator" />
           <div class="info">
-            <p>Welcome，{{userName}}</p>
-            <a href="javascript:void(0);"><IconFont type="QQ" /> Online</a>
+            <!-- 中文名 -->
+            <p>欢迎，{{userName == 'admin' ? '崔永键' : userName}}</p>
+            <!-- 英文名 <Icon type="ios-contact-outline" /> -->
+            <a href="javascript:void(0);"><IconFont type="user" /> yongjiancui</a>
           </div>
         </div>
         <div class="menu-header">导航菜单</div>
@@ -24,6 +27,7 @@
         </template>
       </Menu>
     </div>
+    <!-- 左侧折叠起来，就只展示简略icon -->
     <div class="menu-collapsed" v-show="collapsed" :list="menuList">
       <Avatar :src="userAvator" class="menu-user-avator"/>
       <template v-for="item in menuList">
@@ -100,8 +104,9 @@ export default {
   },
   watch: {
     activeName (name) {
-      if (this.accordion) this.openedNames = this.getOpenedNamesByActiveName(name)
-      else this.openedNames = getUnion(this.openedNames, this.getOpenedNamesByActiveName(name))
+      // 下面这个会导致折叠展开时有些乱，先暂时注释掉
+      // if (this.accordion) this.openedNames = this.getOpenedNamesByActiveName(name)
+      // else this.openedNames = getUnion(this.openedNames, this.getOpenedNamesByActiveName(name))
     },
     openNames (newNames) {
       this.openedNames = newNames

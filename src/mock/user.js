@@ -11,7 +11,7 @@ const users = [
     email: '524857526@qq.com',
     address: '上海市普陀区',
     remark: '无',
-    avator: 'http://adminlte.la998.com/dist/img/user2-160x160.jpg',
+    avator: 'https://dummyimage.com/40x40',
     isTab: true
   },
   {
@@ -25,7 +25,7 @@ const users = [
     email: '8387451112@qq.com',
     address: '上海市静安区',
     remark: '无',
-    avator: 'http://adminlte.la998.com/dist/img/user2-160x160.jpg',
+    avator: 'https://dummyimage.com/40x40',
     isTab: false
   }
 ]

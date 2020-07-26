@@ -72,7 +72,7 @@ class httpRequest {
     return Axios.create(conf)
   }
   // 合并请求实例
-  mergeReqest (instances = []) {
+  mergeRequest (instances = []) {
     //
   }
   // 请求实例
@@ -80,7 +80,7 @@ class httpRequest {
     var instance = this.create()
     this.interceptors(instance, options.url)
     options = Object.assign({}, options)
-    this.queue[options.url] = instance
+    // this.queue[options.url] = instance // 好像queue暂时没用到，先注释
     return instance(options)
   }
 }

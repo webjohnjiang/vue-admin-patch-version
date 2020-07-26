@@ -1,7 +1,9 @@
+// 貌似是一些业务公共函数
+
 import Cookies from 'js-cookie'
 import { forEach, hasOneOf } from '@/libs/tools'
 
-export const TOKEN_KEY = 'token'
+export const TOKEN_KEY = 'dash_board_token'
 
 export const setToken = (token) => {
   Cookies.set(TOKEN_KEY, token, {expires: 1})
@@ -34,15 +36,16 @@ export const getMenuByRouter = (list, access) => {
   let res = []
   forEach(list, item => {
     if (item.meta && !item.meta.hideInMenu) {
-      let obj = {
+      let obj = { // 结构是 icon，name，meta信息
         icon: (item.meta && item.meta.icon) || '',
         name: item.name,
         meta: item.meta
       }
+      // 如果有孩子，而且当前节点是有权限展示的，还得去递归一下他的孩子看看是否能展示
       if (hasChild(item) && showThisMenuEle(item, access)) {
         obj.children = getMenuByRouter(item.children, access)
       }
-      if (item.meta.href) obj.href = item.meta.href
+      if (item.meta.href) obj.href = item.meta.href // 如果是个外跳链接，挂上 href
       if (showThisMenuEle(item, access)) res.push(obj)
     }
   })
