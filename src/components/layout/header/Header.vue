@@ -5,7 +5,7 @@
         <a @click="handleNavToggle" type="text" :class="['icon sider-nav-toggle', collapsed ? 'collapsed' : '']"><IconFont type="outdent" /></a>
       </li>
       <li>
-        <router-link class="logo" to="/">Vue Admin</router-link>
+        <router-link class="logo" to="/">Let's Tracker</router-link>
       </li>
     </ul>
     <ul class="header-right">

@@ -8,12 +8,12 @@
     <Row :gutter="20" style="padding:15px">
       <i-col span="8">
         <Card shadow>
-          <PieChart style="height: 300px;" :value="pieData" text="会员等级" name="会员等级" />
+          <PieChart style="height: 300px;" :value="pieData" text="操作系统分布" name="操作系统分布" />
         </Card>
       </i-col>
       <i-col span="16">
         <Card shadow>
-          <BarChart style="height: 300px;" :value="barData" text="每周用户活跃量"/>
+          <BarChart style="height: 300px;" :value="barData" text="近一周UV统计"/>
         </Card>
       </i-col>
     </Row>
@@ -33,16 +33,16 @@ export default {
   data () {
     return {
       infoCardData: [
-        { title: '新反馈', icon: 'message', count: 803, bgColor: '#2d8cf0' },
-        { title: '用户量', icon: 'barchart', count: 250, bgColor: '#19be6b' },
-        { title: '订单量', icon: 'shopping', count: 142, bgColor: '#32c5d2' },
-        { title: '分享统计', icon: 'barchart', count: 657, bgColor: '#8e44ad' }
+        { title: '今日PV', icon: 'message', count: 45, bgColor: '#2d8cf0' },
+        { title: '今日UV', icon: 'barchart', count: 6, bgColor: '#19be6b' },
+        { title: '本月PV', icon: 'shopping', count: 142, bgColor: '#32c5d2' },
+        { title: '本月UV', icon: 'barchart', count: 657, bgColor: '#8e44ad' }
       ],
       pieData: [
-        {value: 9526, name: '普卡'},
-        {value: 3689, name: '银卡'},
-        {value: 1025, name: '金卡'},
-        {value: 231, name: '白金卡'}
+        {value: 9526, name: 'Windows'},
+        {value: 3689, name: 'MAC'},
+        {value: 1025, name: 'ios'},
+        {value: 231, name: '安卓'}
       ],
       barData: {
         Mon: 13253,

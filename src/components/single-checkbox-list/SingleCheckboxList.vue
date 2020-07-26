@@ -38,11 +38,11 @@ export default {
 <style lang="less">
 .single-checkbox-list{
   li{
-    cursor: pointer; 
-    position: relative; 
+    cursor: pointer;
+    position: relative;
     height: 30px;
-    line-height: 30px; 
-    padding-left:45px; 
+    line-height: 30px;
+    padding-left:45px;
     margin-bottom: 5px;
     font-size: 14px;
   }
@@ -71,5 +71,5 @@ export default {
     line-height: 30px;
     text-align: center;
   }
-} 
+}
 </style>

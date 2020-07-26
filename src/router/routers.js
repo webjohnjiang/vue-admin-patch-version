@@ -36,7 +36,7 @@ export default [
         meta: {
           hideInMenu: true,
           notCache: true,
-          title: '我的桌面',
+          title: '首页',
           icon: 'home'
         },
         component: () => import('@/views/dashboard')
@@ -48,7 +48,7 @@ export default [
     name: 'system',
     meta: {
       icon: 'setting',
-      title: '系统管理'
+      title: '数据大盘'
     },
     component: Layout,
     children: [
@@ -57,7 +57,7 @@ export default [
         name: 'user',
         meta: {
           icon: 'user',
-          title: '用户管理'
+          title: '历史数据'
         },
         component: () => import('@/views/system/user')
       },
@@ -66,28 +66,115 @@ export default [
         name: 'role',
         meta: {
           icon: 'team',
-          title: '角色管理'
+          title: '实时大屏'
         },
         component: () => import('@/views/system/role')
-      },
+      }
+    ]
+  },
+  {
+    path: '/system',
+    name: 'system',
+    meta: {
+      icon: 'setting',
+      title: '行为追踪'
+    },
+    component: Layout,
+    children: [
       {
-        path: 'dept',
-        name: 'dept',
+        path: 'user',
+        name: 'user',
         meta: {
-          icon: 'solution',
-          title: '部门管理'
-        },
-        component: () => import('@/views/system/dept')
-      },
-      {
-        path: 'test',
-        name: 'test',
-        meta: {
-          icon: 'dashboard',
-          title: '测试页面'
+          icon: 'user',
+          title: '时间线'
         },
         component: () => import('@/views/test')
+      },
+      {
+        path: 'role',
+        name: 'role',
+        meta: {
+          icon: 'team',
+          title: '白名单' // 目前添加白名单要等用户下次进入后再重新查。后续添加白名单之后，可以在收到日志时加一个消息推送，推到dashboard通知里
+        },
+        component: () => import('@/views/system/role')
+      }
+    ]
+  },
+  {
+    path: '/system',
+    name: 'system',
+    meta: {
+      icon: 'setting',
+      title: '项目管理'
+    },
+    component: Layout,
+    children: [
+      {
+        path: 'user',
+        name: 'user',
+        meta: {
+          icon: 'user',
+          title: '项目列表'
+        },
+        component: () => import('@/views/system/user')
+      },
+      {
+        path: 'role',
+        name: 'role',
+        meta: {
+          icon: 'team',
+          title: '新建项目'
+        },
+        component: () => import('@/views/system/role')
       }
     ]
   }
+  // {
+  //   path: '/system',
+  //   name: 'system',
+  //   meta: {
+  //     icon: 'setting',
+  //     title: '系统管理'
+  //   },
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'user',
+  //       name: 'user',
+  //       meta: {
+  //         icon: 'user',
+  //         title: '用户管理'
+  //       },
+  //       component: () => import('@/views/system/user')
+  //     },
+  //     {
+  //       path: 'role',
+  //       name: 'role',
+  //       meta: {
+  //         icon: 'team',
+  //         title: '角色管理'
+  //       },
+  //       component: () => import('@/views/system/role')
+  //     },
+  //     {
+  //       path: 'dept',
+  //       name: 'dept',
+  //       meta: {
+  //         icon: 'solution',
+  //         title: '部门管理'
+  //       },
+  //       component: () => import('@/views/system/dept')
+  //     },
+  //     {
+  //       path: 'test',
+  //       name: 'test',
+  //       meta: {
+  //         icon: 'dashboard',
+  //         title: '测试页面'
+  //       },
+  //       component: () => import('@/views/test')
+  //     }
+  //   ]
+  // }
 ]
